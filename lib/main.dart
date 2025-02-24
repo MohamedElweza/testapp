@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(title: const Text('Flutter CI/CD with Firebase')),
+        appBar: AppBar(title: const Text('Flutter CI/CD with Firebase    Sudo I')),
         body: const Center(
           child: Text('Deployed via GitHub Actions 🚀 test 2',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
