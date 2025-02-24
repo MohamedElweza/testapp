@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "707381991855",
+    "project_id": "medo-6917b",
+    "storage_bucket": "medo-6917b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:707381991855:android:f44128d486fe578e98b75a",
+        "android_client_info": {
+          "package_name": "com.example.testapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "707381991855-o6p532f027hhaus8ave8v7smj9qf1ve1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJ36WxVS_QFzmcgpgV451iv6Y8I1XMits"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "707381991855-o6p532f027hhaus8ave8v7smj9qf1ve1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
