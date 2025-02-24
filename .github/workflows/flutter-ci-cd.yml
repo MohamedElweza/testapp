@@ -36,9 +36,10 @@ jobs:
       - name: Install Firebase CLI
         run: curl -sL https://firebase.tools | bash
 
+      - name: Authenticate Firebase CLI
+        run: export GOOGLE_APPLICATION_CREDENTIALS="$HOME/firebase-service-account.json"
 
       - name: Upload APK to Firebase App Distribution
         run: |
           firebase appdistribution:distribute build/app/outputs/flutter-apk/app-release.apk \
             --app ${{ secrets.FIREBASE_APP_ID }} \
-            --token "$(firebase login:ci --no-localhost)"
