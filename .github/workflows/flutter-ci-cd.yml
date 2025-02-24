@@ -31,15 +31,22 @@ jobs:
       - name: Decode Firebase Service Account Key
         env:
           FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
-        run: echo "$FIREBASE_SERVICE_ACCOUNT_JSON" > firebase-service-account.json
+        run: echo "$FIREBASE_SERVICE_ACCOUNT_JSON" > $HOME/firebase-service-account.json
 
       - name: Install Firebase CLI
         run: curl -sL https://firebase.tools | bash
 
       - name: Authenticate Firebase CLI
-        run: export GOOGLE_APPLICATION_CREDENTIALS="$HOME/firebase-service-account.json"
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: $HOME/firebase-service-account.json
+        run: |
+          firebase projects:list
+          firebase use --add ${{ secrets.FIREBASE_PROJECT_ID }}
 
       - name: Upload APK to Firebase App Distribution
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: $HOME/firebase-service-account.json
         run: |
           firebase appdistribution:distribute build/app/outputs/flutter-apk/app-release.apk \
             --app ${{ secrets.FIREBASE_APP_ID }} \
+            --project ${{ secrets.FIREBASE_PROJECT_ID }}
