@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(title: const Text('Flutter CI/CD with Firebase')),
         body: const Center(
-          child: Text('Deployed via GitHub Actions 🚀',
+          child: Text('Deployed via GitHub Actions 🚀 test 2',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
         ),
       ),
